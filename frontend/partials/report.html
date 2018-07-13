@@ -1,0 +1,35 @@
+<div class="container page-report" data-ng-init="report()">
+  <div class="panel panel-default">
+    <div class="panel-heading">Snail Report</div>
+    <div class="panel-body">
+      <legend><i class="ion-clipboard"></i> Statistics</legend>
+      <ol>
+        <li>Total successes executions: {{ report.successes }}</li>
+        <li>Total failures executions: {{ report.failures }}</li>
+        <li>Average total distance climbed: {{ report.average_total_distance_climbed }}</li>
+        <li>Average time for success: {{ report.average_time_success }}</li>
+        <li>Average time for failure: {{ report.average_time_failure }}</li>
+      </ol>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>H</th>
+            <th>U</th>
+            <th>D</th>
+            <th>F</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="snail in report.snails" ng-class="{ success: snail.success, danger: !snail.success }">
+            <td>{{ snail.h }}</td>
+            <td>{{ snail.u }}</td>
+            <td>{{ snail.d }}</td>
+            <td>{{ snail.f }}</td>
+            <td>{{ snail.result }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

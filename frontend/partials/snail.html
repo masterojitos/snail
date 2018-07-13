@@ -1,0 +1,31 @@
+<div class="container page-snail">
+  <div class="panel panel-default">
+    <div class="panel-heading">Snail Form</div>
+    <div class="panel-body">
+      <legend><i class="ion-clipboard"></i> Information</legend>
+      <form method="post" ng-submit="newSnail()" name="snailForm" class="form-inline">
+        <div class="form-group">
+          <label class="control-label">H</label>
+          <input type="number" class="form-control" ng-model="snail.h" required />
+        </div>
+        <div class="form-group">
+          <label class="control-label">U</label>
+          <input type="number" class="form-control" ng-model="snail.u" required />
+        </div>
+        <div class="form-group">
+          <label class="control-label">D</label>
+          <input type="number" class="form-control" ng-model="snail.d" required />
+        </div>
+        <div class="form-group">
+          <label class="control-label">F</label>
+          <input type="number" class="form-control" ng-model="snail.f" required />
+        </div>
+        <button class="btn btn-success" ng-disabled="snailForm.$invalid">Send</button>
+      </form>
+      <div class="margin-top" ng-if="snail.result">
+          <legend><i class="ion-stats-bars"></i> Result</legend>
+          <pre>{{ snail.result | json }}</pre>
+      </div>
+    </div>
+  </div>
+</div>
